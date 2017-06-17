@@ -64,6 +64,7 @@ figure {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -277,6 +278,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -312,6 +314,7 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -390,6 +393,7 @@ template {
   display: none; }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 body {
@@ -399,21 +403,74 @@ body {
 
 .question {
   margin-bottom: 20px; }
-  .question h2 {
-    background: lightgrey;
-    margin: 0;
-    padding: 20px; }
 
-.question_info {
+.question-title {
+  background: lightgrey;
+  margin: 0;
+  padding: 20px; }
+  .question-title a {
+    color: black;
+    text-decoration: none; }
+  .question-title a:hover {
+    color: #6C7A89; }
+
+.question-infos {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   background: dimgrey;
   color: white;
   padding: 10px; }
-  .question_info p {
+  .question-infos p {
     margin: 0;
-    width: 85%; }
+    width: 80%; }
+
+#return-btn {
+  display: inline-block;
+  background: lightgrey;
+  color: dimgrey;
+  padding: 8px;
+  font-size: .8rem;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 20px; }
+  #return-btn:hover {
+    background: #212121;
+    color: white; }
+
+#reponses {
+  background: #212121;
+  padding: 20px;
+  margin-bottom: 20px; }
+  #reponses > h2 {
+    color: #EEE;
+    margin: 15px 0; }
+
+.reponse {
+  margin-bottom: 15px; }
+
+.reponse-infos {
+  background: #BDBDBD;
+  padding: 15px 20px; }
+  .reponse-infos p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: bold; }
+  .reponse-infos time {
+    font-size: .8rem; }
+
+.reponse-content {
+  background: #EEEEEE;
+  padding: 20px 20px 30px 20px; }
+  .reponse-content h3 {
+    margin: 0;
+    margin-bottom: 10px; }
+  .reponse-content p {
+    margin: 0; }
+
+#no-reponse {
+  color: #EEE; }
 
 form {
   background: lightgrey;
@@ -423,16 +480,35 @@ label {
   display: block;
   margin-bottom: 5px; }
 
-input, #mceu_11 {
+input {
   margin-bottom: 20px; }
 
 button {
   background: dimgrey;
   color: white;
   border: none;
-  padding: 10px 20px; }
+  padding: 10px 20px;
+  cursor: pointer; }
 
 #question_content {
   width: 100%;
   line-height: 40px;
   font-size: 1.2rem; }
+
+footer {
+  background: #282828;
+  color: #757575;
+  font-size: .8rem;
+  padding: 1px 50px; }
+  footer ul {
+    list-style: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 0; }
+  footer a {
+    color: #757575; }

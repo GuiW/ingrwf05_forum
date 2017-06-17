@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Forum</title>
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style/css/style.css">
 </head>
 <body>
   <header>

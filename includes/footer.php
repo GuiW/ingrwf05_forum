@@ -11,3 +11,5 @@
 
 </body>
 </html>
+
+<?php echo debug(); ?>

@@ -1,0 +1,17 @@
+footer {
+  background : #282828;
+  color : #757575;
+  font-size : .8rem;
+  padding : 1px 50px;
+
+  ul {
+    list-style : none;
+    display : flex;
+    justify-content : space-around;
+    padding : 0;
+  }
+
+  a {
+    color : #757575;
+  }
+}
