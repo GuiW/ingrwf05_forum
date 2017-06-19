@@ -9,12 +9,15 @@
     addslashes($_POST['titre']),
     addslashes($_POST['mail'])
 
+    // En php, date() permet de créer une date
+    //date('Y-m-d')
+
     );
 
     $connect -> query($sql);
     echo $connect -> error;
 
-    header("location:../index.php");
+    header("location:../index.html");
     exit;
   endif;
 ?>

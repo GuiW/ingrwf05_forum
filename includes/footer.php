@@ -9,6 +9,17 @@
   <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
   <script>tinymce.init({ selector:'textarea' });</script>
 
+  <script>
+    delLinks = document.querySelectorAll("a.del-btn");
+    for (i=0; i<delLinks.length; i++) {
+      delLinks[i].addEventListener('click', function(e) {
+        if (!confirm("supprimer ? ") ) {
+          e.preventDefault();
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
 

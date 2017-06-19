@@ -1,16 +1,15 @@
 <?php
 
   if ( isset($_POST['insert_reponse']) ) :
-  echo 'Alert';
 
     require("../config.php");
 
-    $sql = sprintf("INSERT INTO reponses SET mail = '%s', titre = '%s', texte = '%s', id_questions = '%s'",
+    $sql = sprintf("INSERT INTO reponses SET mail = '%s', titre = '%s', texte = '%s', id_questions = %s",
 
     addslashes($_POST['mail']),
     addslashes($_POST['titre']),
     addslashes($_POST['texte']),
-    addslashes($_POST['id_questions'])
+    ($_POST['id_questions'])
 
     );
 

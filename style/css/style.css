@@ -64,7 +64,6 @@ figure {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -278,7 +277,6 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -314,7 +312,6 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -393,15 +390,32 @@ template {
   display: none; }
 
 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 body {
   font-family: arial;
   max-width: 800px;
   margin: 0 auto; }
 
+.del-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 15px;
+  line-height: 17px;
+  text-align: center;
+  text-decoration: none;
+  background: white;
+  color: dimgrey;
+  border: 1px solid dimgrey;
+  border-radius: 4px;
+  font-size: .6rem; }
+
 .question {
+  position: relative;
   margin-bottom: 20px; }
 
 .question-title {
@@ -415,7 +429,6 @@ body {
     color: #6C7A89; }
 
 .question-infos {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -448,6 +461,7 @@ body {
     margin: 15px 0; }
 
 .reponse {
+  position: relative;
   margin-bottom: 15px; }
 
 .reponse-infos {
@@ -472,6 +486,12 @@ body {
 #no-reponse {
   color: #EEE; }
 
+#no-question {
+  background: lightgrey;
+  padding: 20px;
+  color: dimgrey;
+  margin-bottom: 40px; }
+
 form {
   background: lightgrey;
   padding: 20px; }
@@ -480,7 +500,7 @@ label {
   display: block;
   margin-bottom: 5px; }
 
-input {
+input, #mceu_11 {
   margin-bottom: 20px; }
 
 button {
@@ -502,7 +522,6 @@ footer {
   padding: 1px 50px; }
   footer ul {
     list-style: none;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;

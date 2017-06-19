@@ -1,2 +1,3 @@
 RewriteEngine on
+RewriteRule index.html index.php [L]
 RewriteRule question-([0-9]*)\.html index.php?question=$1 [L]

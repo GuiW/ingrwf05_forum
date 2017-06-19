@@ -7,7 +7,7 @@ define("DB_PASSWORD","root");
 
 $connect = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-if ($connect->error) :
+if (!$connect) :
   echo "erreur de connexion : ".$connect->error;
   exit;
 
@@ -16,6 +16,6 @@ else :
 
 endif;
 
-session_start();
-
+  //On plaçant le session_start, la session sera ouverte en permanence
+  session_start();
 ?>

@@ -26,6 +26,7 @@
 }
 
 .reponse {
+  position : relative;
   margin-bottom : 15px;
 }
 
@@ -58,6 +59,14 @@
   }
 }
 
+
 #no-reponse {
   color : #EEE;
+}
+
+#no-question {
+  background : lightgrey;
+  padding : 20px;
+  color : dimgrey;
+  margin-bottom : 40px;
 }
