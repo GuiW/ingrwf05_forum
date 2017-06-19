@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Feed</title>
+</head>
+<body>
+
+  <h1>Le Forum</h1>
+  <section id="liste_Q">
+    
+  </section>
+
+  <script>
+
+    // 4 étapes :
+      //on crée l'objet
+      //on initialise
+      //on envoit
+      //on reçoit le résultat
+
+    //La variable contient l'objet qui nous permet de faire une requête http
+    var xhr = new XMLHttpRequest();
+
+    //écouteur d'event sur le changement d'état de l'objet
+    xhr.onreadystatechange = function() {
+      //On vérifier si on est à l'étape 4 et si tout s'est bien passé
+      if (xhr.readyState == 4 && (xhr.status == 200)) {
+
+        //Sans JSON.parse, on ne recevrait que du texte et non pas une chaîne json 
+        myResponses = JSON.parse(xhr.responseText);
+
+
+        //Affichage de la liste des questions
+        mySection = document.getElementById("liste_Q");
+        texte = '<ul>';
+        for (theQuestion of myResponses) {
+          texte += '<li class="question" data-idQ="'+ theQuestion.id_questions +'">'+ theQuestion.titre +'</li>';
+        };
+        texte += '</ul>'
+        mySection.innerHTML = texte;
+
+        //Click sur les questions
+        myQuestions = document.querySelectorAll(".question");
+
+        for (question of myQuestions) {
+          console.log("test");
+          question.addEventListener('click', function() {
+            myIdq = this.getAttribute("data-idq");
+            alert(myIdq);
+
+            //On lance une nouvelle requête
+            var xhrRep = new XMLHttpRequest();
+
+            xhrRep.onreadystatechange = function() {
+              if (xhrRep.readyState == 4 && (xhrRep.status == 200)) {
+
+              }
+            }
+            xhrRep.open("GET", "feed.php", true);
+            xhrRep.send(null);
+          })
+        }
+      };
+    }
+
+
+    //On utilise open() pour initier une requête, de la configurer
+    //On précise la method, l'url de destination, et si c'est on est asynchrone ou non.
+    //On utilise send pour envoyer la requête
+    xhr.open("GET", "feed.php", false);
+    xhr.send(null);
+
+  </script>
+</body>
+</html>

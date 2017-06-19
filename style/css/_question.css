@@ -1,4 +1,5 @@
 .question {
+  position: relative;
   margin-bottom: 20px; }
 
 .question-title {
