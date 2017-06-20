@@ -15,7 +15,7 @@
     xhr.onreadystatechange = function() {
       //On vérifier si on est à l'étape 4 et si tout s'est bien passé
       if (xhr.readyState == 4 && (xhr.status == 200)) {
-
+        console.log(xhr.responseText);
         //Sans JSON.parse, on ne recevrait que du texte et non pas une chaîne json 
         myResponses = JSON.parse(xhr.responseText);
 
@@ -46,12 +46,15 @@
             var xhrRep = new XMLHttpRequest();
 
             xhrRep.onreadystatechange = function() {
+              
               if (xhrRep.readyState == 4 && (xhrRep.status == 200)) {
+                console.log(xhrRep.responseText);
 
                 myLiQ = document.querySelector("[data-idq='" + myIdq + "']");
 
                 if (xhrRep.responseText !== "none") {
 
+                 
                   myResponses = JSON.parse(xhrRep.responseText);
 
                   //Suppression des réponses si elles étaient déjà affichées
@@ -79,7 +82,7 @@
               }//-> if-02
             }//-> onreadystatechange-02
 
-            xhrRep.open("GET", "feed.php?id_questions="+myIdq, true);
+            xhrRep.open("GET", "includes/reponses.php?ajax&question="+myIdq, true);
             xhrRep.send(null);
 
           })//-> eventClick-01
@@ -91,5 +94,5 @@
     //On utilise open() pour initier une requête, de la configurer
     //On précise la method, l'url de destination, et si c'est on est asynchrone ou non.
     //On utilise send pour envoyer la requête
-    xhr.open("GET", "feed.php", false);
+    xhr.open("GET", "includes/home.php?ajax", false);
     xhr.send(null);

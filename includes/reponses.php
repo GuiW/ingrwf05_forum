@@ -1,4 +1,8 @@
 <?php
+  // SI ON A DE L'AJAX
+  if (isset( $_GET['ajax']) ):
+    require_once("../config.php");
+  endif;
 
   if ( isset($_GET['del']) AND $_GET['del'] == "r" ) :
 
@@ -28,6 +32,23 @@
   echo $connect -> error;
 
   $nb_reponses = $q_reponses -> num_rows;
+
+  // SI ON A DE L'AJAX
+  if ( isset($_GET['ajax']) ) : 
+   if ($nb_reponses > 0) :
+     $myArray_R = array();
+
+     while ($row = $q_reponses -> fetch_object()) :
+       $myArray_R[] = $row;
+     endwhile;
+     echo json_encode($myArray_R);
+
+   else :
+     echo "none";
+
+   endif;
+   exit;
+  endif;
 
 // ************************************************************************** //
 ?>

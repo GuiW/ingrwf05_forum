@@ -1,5 +1,9 @@
 <?php
 
+// ************************************************************************** //
+// Au lieu d'utiliser feed.php, on va plutôt utiliser les scripts qui sont déjà    présents dans les fichers home.php et reponses.php
+// ************************************************************************** //
+
   require("config.php");
 
   // Content-type décrit le type de contenu
